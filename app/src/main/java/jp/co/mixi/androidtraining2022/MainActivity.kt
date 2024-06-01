@@ -14,5 +14,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val adapter = LapTimeAdapter()
+        binding.recyclerView.adapter = adapter
+//        mutableと付くものは、途中で値の変更を行いたい箇所に使用することが多い。
+        val lapTimeList = mutableListOf<LapTime>()
+
+        binding.primaryButton.setOnClickListener {
+            val lapTime = LapTime(lapTimeList.size +1,0)
+            lapTimeList.add(lapTime)
+//            adapterに値を入れるため、submitListをする。
+//            mutableListを操作するが、代入前の値も保持しておきたい場合はtoList()してあげる。
+            adapter.submitList(lapTimeList.toList())
+        }
     }
 }

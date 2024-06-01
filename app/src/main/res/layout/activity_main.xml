@@ -41,6 +41,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--   RecyclerViewにてリスト表示。表示領域分だけViewをレイアウト-->
+<!--    app:layoutManagerは並べ方を決定。LinearLayoutManagerは縦方向のリスト表示-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="0dp"
