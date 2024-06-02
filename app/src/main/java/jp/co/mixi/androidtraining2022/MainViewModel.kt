@@ -14,6 +14,24 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         TODO()
     }
 
+//    lifecycleScopeを追加すれば、非同期にて処理を行うことが可能になる。
+//    仮にid:timeTextというビューのtextを使用し、1秒ごとにカウントする場合は、下記のようになる。
+//    lifecycleScope.launch {
+//        binding.timeText.text = "0秒"
+//        launch {
+//            delay(1000)
+//            binding.timeText.text  = "1秒経過"
+//        }
+//        launch {
+//            delay(2000)
+//            binding.timeText. = "2秒経過"
+//        }
+//        launch {
+//            delay(3000)
+//            binding.timeText.text = "3秒経過"
+//        }
+//    }
+
     // タイマーの開始時刻(ミリ秒)
     private var timerStartedAt: Long = 0L
 
